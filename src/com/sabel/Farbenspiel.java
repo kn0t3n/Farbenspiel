@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Farbenspiel extends JFrame implements ActionListener {
+public class Farbenspiel extends JFrame {
 
     private JPanel jpnl;
     private JButton jBtnGruen;
@@ -25,9 +25,24 @@ public class Farbenspiel extends JFrame implements ActionListener {
     }
 
     private void initEvents() {
-        jBtnBlau.addActionListener(this);
-        jBtnGelb.addActionListener(this);
-        jBtnGruen.addActionListener(this);
+        jBtnBlau.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jpnl.setBackground(Color.blue);
+            }
+        });
+        jBtnGelb.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jpnl.setBackground(Color.yellow);
+            }
+        });
+        jBtnGruen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jpnl.setBackground(Color.green);
+            }
+        });
     }
 
     private void initComponents() {
@@ -47,24 +62,5 @@ public class Farbenspiel extends JFrame implements ActionListener {
         jpnl.add(jBtnBlau);
 
         this.add(jpnl);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        System.out.println(e.getActionCommand());
-
-        switch (e.getActionCommand()) {
-            case "Gruen":
-                jpnl.setBackground(Color.green);
-                break;
-            case "Blau":
-                jpnl.setBackground(Color.blue);
-                break;
-            case "Gelb":
-                jpnl.setBackground(Color.yellow);
-                break;
-        }
-        repaint();
     }
 }
