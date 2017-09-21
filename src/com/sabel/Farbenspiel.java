@@ -2,10 +2,10 @@ package com.sabel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 
-public class Farbenspiel extends JFrame implements ActionListener {
+public class Farbenspiel extends JFrame {
 
     private JPanel jpnl;
     private JButton jBtnGruen;
@@ -19,16 +19,16 @@ public class Farbenspiel extends JFrame implements ActionListener {
         this.setSize(300, 300);
 
         this.initComponents();
-        this.initEvents();
+//        this.initEvents();
 
         this.setVisible(true);
     }
 
-    private void initEvents() {
-        jBtnBlau.addActionListener(this);
-        jBtnGelb.addActionListener(this);
-        jBtnGruen.addActionListener(this);
-    }
+//    private void initEvents() {
+//        jBtnBlau.addActionListener(this);
+//        jBtnGelb.addActionListener(this);
+//        jBtnGruen.addActionListener(this);
+//    }
 
     private void initComponents() {
 
@@ -49,22 +49,22 @@ public class Farbenspiel extends JFrame implements ActionListener {
         this.add(jpnl);
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        System.out.println(e.getActionCommand());
-
-        switch (e.getActionCommand()) {
-            case "Gruen":
-                jpnl.setBackground(Color.green);
-                break;
-            case "Blau":
-                jpnl.setBackground(Color.blue);
-                break;
-            case "Gelb":
-                jpnl.setBackground(Color.yellow);
-                break;
-        }
-        repaint();
-    }
+//    @Override
+//    public void actionPerformed(ActionEvent e) {
+//
+//        System.out.println(e.getActionCommand());
+//
+//        switch (e.getActionCommand()) {
+//            case "Gruen":
+//                jpnl.setBackground(Color.green);
+//                break;
+//            case "Blau":
+//                jpnl.setBackground(Color.blue);
+//                break;
+//            case "Gelb":
+//                jpnl.setBackground(Color.yellow);
+//                break;
+//        }
+//        repaint();
+//    }
 }
